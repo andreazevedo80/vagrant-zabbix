@@ -34,7 +34,7 @@ Este comando irá:
 - Instalar o MySQL e Zabbix Server na VM.
 - Configurar a rede e redirecionar a porta 80 da VM para a porta 8000 do host.
 
-5. Acesse a Interface Web do Zabbix:
+### 4. Acesse a Interface Web do Zabbix:
 
 Após a instalação, a interface do Zabbix pode ser acessada via navegador:
 
