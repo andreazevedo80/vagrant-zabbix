@@ -1,0 +1,21 @@
+# Vagrantfile para VM Ubuntu 20.04 com Zabbix Server e MySQL instalados
+Vagrant.configure("2") do |config|
+  
+    # Definir a box
+    config.vm.box = "ubuntu/focal64"
+    
+    # Definir o nome da VM
+    config.vm.hostname = "srv-zabbix"
+
+    # Definir a quantidade de memória RAM e CPUs
+    config.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 2
+    end
+    
+    # Definir o redirecionamento de porta.
+    config.vm.network "forwarded_port", guest: 80, host: 8000
+
+    # Executar script para instalação do Zabbix
+    config.vm.provision "shell", path: "scripts/install_zabbix.sh"
+  end
